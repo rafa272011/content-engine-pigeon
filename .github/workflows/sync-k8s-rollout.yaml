@@ -15,7 +15,7 @@ jobs:
       - name: Configure Kubectl
         run: |
           mkdir -p ~/.kube
-          echo "${{ secret.KUBE_CONFIG }}" > ~/.kube/config
+          echo "${{ secrets.KUBE_CONFIG }}" > ~/.kube/config
       - name: Apply K8s Manifest
         run: |
           kubectl apply -f k8s/
